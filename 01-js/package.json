@@ -6,6 +6,9 @@
   "directories": {
     "test": "tests"
   },
+  "dependencies": {
+    "node": "v18.12.1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"

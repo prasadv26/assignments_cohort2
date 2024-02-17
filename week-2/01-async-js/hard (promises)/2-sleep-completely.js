@@ -5,6 +5,22 @@
  */
 
 function sleep(milliseconds) {
+  return new Promise((resolve) => {
+    const startTime = Date.now();
+    const endTime = startTime + milliseconds;
+
+    function checkTime() {
+      const currentTime = Date.now();
+      if (currentTime >= endTime) {
+        resolve();
+      } else {
+        setTimeout(() => {
+          checkTime();
+        }, 0);
+      }
+    }
+    checkTime();
+  });
 }
 
 module.exports = sleep;
